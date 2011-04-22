@@ -33,6 +33,9 @@ public class MainServlet extends HttpServlet {
 			else if (operation.equals("contact")) {
 				url = "/contact.jsp";
 			}
+			else if (operation.equals("register") /* && user == null*/) {
+				url = "/register.jsp";
+			}
 		}
 
 		RequestDispatcher dispatcher = getServletContext()
