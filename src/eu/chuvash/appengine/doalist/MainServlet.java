@@ -6,6 +6,9 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+import com.google.appengine.api.users.User;
+import com.google.appengine.api.users.UserServiceFactory;
+
 @SuppressWarnings("serial")
 public class MainServlet extends HttpServlet {
 	private static final String CONTENT_TYPE = "text/html; charset=UTF-8";
@@ -17,6 +20,11 @@ public class MainServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
+		
+//		com.google.appengine.api.users.UserService userService = UserServiceFactory.getUserService();
+//        User user = userService.getCurrentUser();
+//        req.setAttribute("loggedInAs", user);
+		
 		req.setAttribute("goesThroughMainServlet", new Boolean(true));
 		//this is in order to be able to track where requests come from
 		//all request which invoke jsp-files directly will be stripped.
